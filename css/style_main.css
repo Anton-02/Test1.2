@@ -1,0 +1,327 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: fantasy;
+    
+}
+
+.container{
+    min-height: 100vh;
+    background-image: url(../img/background.png);
+    background-attachment: scroll;
+    background-size: 100px, 90px;
+       
+}
+
+#header{
+    width: 100%;
+}
+
+#BgPicture{
+    height: 150px;
+    background-color: rgb(40, 5, 73);
+}
+
+#Nav{
+    display: flex;
+    align-items: flex-start ;
+    background-color: rgb(17, 17, 17);
+    
+}
+
+#Nav_container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-height: 67px;
+    background-color: rgb(24, 24, 24);
+    margin-left: 12px;
+    border: 1px black solid;
+}
+
+#Nav_container.active{
+    max-height: 300px;
+    transition: 1s ease-in-out;
+    /* border: 1px black solid; */
+}
+
+#Icon{
+    cursor: pointer;
+    height: 115px;
+    width: 115px;
+    
+}
+
+#Icon img{
+    position: absolute;
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+
+#Icon img:hover{
+    height: 115px;
+    width: 115px;
+    transition: all .4s ease;
+}
+
+#Nav_menu ul{
+    display: flex;
+    
+}
+
+#Nav_menu li{
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 30px;
+    border-radius: 5%;
+    font-size: 1.2em;
+    background: linear-gradient(rgb(58, 58, 58), rgb(129, 122, 122));
+    color: #dadde1;
+    border: 1px rgb(37, 37, 37) solid;
+}
+
+
+
+#Nav_menu li:hover{
+    transition: all .4s ease;
+    /* color: rgb(46, 143, 223); */
+    color: rgb(19, 156, 202);
+    text-shadow: 0 0 1px rgb(168, 161, 161);
+    background: 
+    linear-gradient(rgba(80, 80, 80,.8), rgba(129, 122, 122, 0)), 
+    linear-gradient(to right, rgba(80, 80, 80,.8), rgba(129, 122, 122, 0)), 
+    linear-gradient(to left, rgba(80, 80, 80,.8), rgba(129, 122, 122, 0));
+}
+
+/* #Nav_menu span::after{
+    content: "";
+    position: absolute;
+    height: 63px;
+    width: 2px;
+    background-color: rgb(53, 50, 50);
+} */
+
+a{
+    text-decoration: none;
+    color: #dadde1;
+}
+
+a:hover{
+    color: rgb(19, 156, 202);
+    transition: all .4s ease;
+}
+
+#User_profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: auto;
+    font-size: 1.2em;
+    
+}
+
+#User_profile a:first-child{
+    margin-top: 8px;
+}
+
+#User_profile a:last-child{
+    margin-bottom: 8px;
+}
+
+
+/* ----- Кнопка меню ------ */
+#Toggle_menu{
+    display: none;
+    position: relative;
+    height: 35px;
+    width: 35px;
+    left: auto;
+    margin: 22px 40px 22px 0;
+    background-color:cornflowerblue;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px rgb(14, 14, 14);
+}
+
+#Toggle_menu span{
+    display: block;
+    position: absolute;
+    height: 2px;
+    top: 17px;
+    left: 7px;
+    right: 7px;
+    background: white;
+    box-shadow: 0 0 2px 0 rgb(14, 14, 14);
+}
+
+#Toggle_menu span::after, #Toggle_menu span::before{
+    position: absolute;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 2px 0 rgb(14, 14, 14);
+}
+
+#Toggle_menu span::after{
+    top: 10px;
+}
+
+#Toggle_menu span::before{
+    bottom: 10px;
+}
+
+/* --------------------------- */
+
+#main{
+    margin: 0 80px;
+    background-color: rgb(26, 26, 26);
+    /* background-color: rgb(37, 37, 37); */
+    height: 1000px;
+    color: #dadde1;
+}
+
+#Footer{
+    background-color: rgb(14, 14, 14);
+    color: rgb(224, 224, 224);
+}
+
+#Scroll_button{
+    position: fixed;
+    display: none;
+    right: 20px;
+    bottom: 50px;
+}
+
+#Scroll_button img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+@media(max-width: 900px){
+    
+    #Nav_menu li{
+        padding: 15px 20px;
+        font-size: 0.8em;
+    }
+
+    #User_profile{
+        font-size: 0.8em;
+    }
+
+    #Icon img{
+        height: 75px;
+        width: 75px;
+    }
+
+    #Icon img:hover{
+        height: 80px;
+        width: 80px;
+    }
+
+    #Icon{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media(max-width: 650px){
+    #Nav_menu li{
+    padding: 10px 5px;
+    }
+
+    #User_profile{
+        margin-right: 0px;
+        font-size: 0.7em;
+    }
+    
+    #main{
+        margin: 0 60px;
+    }
+
+    #Scroll_button{
+        right: 12px;
+    }
+
+    #Scroll_button img{
+        height: 35px;
+        width: 35px;
+    }
+
+}
+
+@media(max-width: 470px){
+    #Icon{
+        margin-left: 10px;
+    }
+
+    #Nav{
+        justify-content: space-between;
+    }
+
+    #Nav_container{
+        position: absolute;
+        flex-direction: column-reverse;
+        max-height: 0;
+        max-width: 150px;
+        top: 230px;
+        left: auto;
+        right: 0;
+        overflow: hidden;
+        text-align: center;
+        border: none;
+        transition: .8s ease;
+        
+    }
+
+    #Nav_menu ul{
+        position: relative;
+        flex-direction: column;
+    }
+
+    #Nav_menu li{
+        background: transparent;
+        padding: 5px 10px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        border-radius: 0%;
+        
+    }
+
+    #Toggle_menu{
+        display: block;
+    }
+
+    #User_profile{
+        width: 100%;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    #main{
+        margin: 0 40px;
+    }
+
+    #Scroll_button{
+        right: 8px;
+    }
+
+    #Scroll_button img{
+        height: 30px;
+        width: 30px;
+        right: 5px;
+    }
+}
+@media(max-width: 320px){
+    #main{
+        margin: 0 15px;
+    }
+}
